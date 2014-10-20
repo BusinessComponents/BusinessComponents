@@ -1,0 +1,26 @@
+{
+	"name": "businesscomponents/businesscomponents",
+    "description": "Business components",
+    "homepage": "https://github.com/businesscomponents/businesscomponents",
+    "keywords": ["business", "order", "invoice", "product", "subscription"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Joost Faassen",
+            "email": "j.faassen@linkorb.com",
+            "role": "Development"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.1.*@dev",
+        "symfony/console": "~2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "BusinessComponents\\": "src/"
+        }
+    },
+    "license": "MIT"
+}

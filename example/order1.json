@@ -1,0 +1,18 @@
+{
+    "ref": "O001",
+    "createdAt": "",
+    "lines": [
+        {
+            "key": "i1",
+            "quantity": 1,
+            "title": "Product A",
+            "unitprice": "12,75"
+        },
+        {
+            "key": "i2",
+            "quantity": 5,
+            "title": "Product B",
+            "unitprice": "3,25"
+        }
+    ]
+}
