@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+		"doctrine/collections": "~1.0"
     },
     "require-dev": {
         "phpspec/phpspec": "2.1.*@dev",

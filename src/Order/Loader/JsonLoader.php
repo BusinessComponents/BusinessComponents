@@ -21,6 +21,7 @@ class JsonLoader
         $data = json_decode($json, true);
         
         $order->setRef($data['ref']);
+        $order->setState($data['state']);
         foreach ($data['lines'] as $linedata) {
             $orderline = new OrderLine();
             $orderline->setQuantity($linedata['quantity']);

@@ -45,12 +45,14 @@ class TestCommand extends Command
         $order = $l->load();
         
         echo "Results:\n";
-        echo " - " . $order->getRef() . "\n";
+        echo " - Ref: " . $order->getRef() . "\n";
+        echo " - State: " . $order->getState() . "\n";
+        echo " - Totalprice: " . $order->getTotalPrice() . "\n";
         
-        echo "Lines:\n";
-        foreach($order->getLines() as $line)
+        echo " - Lines:\n";
+        foreach ($order->getLines() as $line)
         {
-            echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity() . " UnitPrice: " . $line->getUnitPrice() . "\n";
+            echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity() . " UnitPrice: " . $line->getUnitPrice() . ". Total: " . $line->getTotalPrice() . "\n";
         }
         
     }

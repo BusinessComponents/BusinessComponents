@@ -39,6 +39,11 @@ class OrderLine implements OrderLineInterface
     {
         return $this->title;
     }
+    
+    public function getTotalPrice()
+    {
+        return $this->quantity * $this->unitprice;
+    }
 
 
 }
