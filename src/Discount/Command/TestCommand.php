@@ -35,11 +35,11 @@ class TestCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $orderfilename = $input->getArgument('orderfilename');
-        $discountfilename = $input->getArgument('discountfilename');
+        // $discountfilename = $input->getArgument('discountfilename');
         
         $output->writeln('Loading order: ' . $orderfilename);
         
-        $order = new \BusinessComponents\Order\Order();
+        // $order = new \BusinessComponents\Order\Order();
         
         $l = new JsonOrderLoader($orderfilename);
         $order = $l->load();
@@ -50,8 +50,7 @@ class TestCommand extends Command
         echo " - Totalprice: " . $order->getTotalPrice() . "\n";
         
         echo " - Lines:\n";
-        foreach ($order->getLines() as $line)
-        {
+        foreach ($order->getLines() as $line) {
             echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity() . " UnitPrice: " . $line->getUnitPrice() . ". Total: " . $line->getTotalPrice() . "\n";
         }
         

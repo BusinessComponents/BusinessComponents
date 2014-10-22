@@ -1,3 +1,4 @@
 formatter.name: pretty
 suites:
     Invoice : { namespace: BusinessComponents, spec_path: src/Invoice }
+    Vat     : { namespace: BusinessComponents, spec_path: src/Vat }

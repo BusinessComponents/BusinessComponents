@@ -17,23 +17,23 @@ class InvoiceLineSpec extends ObjectBehavior
     {
         $this
             ->setQuantity(3)
-            ->setUnitPrice(200)
+            ->setUnitPrice(4323)
             ->shouldReturn($this)
         ;
-        $this->getUnitPriceTotal()->shouldReturn(600);
+        $this->getUnitPriceTotal()->shouldReturn(12969);
     }
 
     public function it_is_correct_when_calculating_total()
     {
         $vat = new Vat();
-        $vat->setValue(21);
+        $vat->setValue(21.5);
 
         $this
             ->setQuantity(3)
-            ->setUnitPrice(200)
+            ->setUnitPrice(4323)
             ->setVat($vat)
             ->shouldReturn($this)
         ;
-        $this->getTotalPrice()->shouldReturn(726);
+        $this->getTotalPrice()->shouldReturn(15692);
     }
 }

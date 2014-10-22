@@ -81,9 +81,9 @@ class InvoiceLine implements InvoiceLineInterface
     {
         $unitTotal = new Money($this->getUnitPriceTotal());
         $vatPrice = new Money(0);
-        // if ($this->vat !== null) {
+        if ($this->vat !== null) {
             $vatPrice = $unitTotal->multiply($this->vat->getDecimalValue());
-        // }
+        }
         $total = $unitTotal->add($vatPrice);
         return $total->getAmount();
     }
