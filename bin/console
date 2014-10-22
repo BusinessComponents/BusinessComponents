@@ -26,7 +26,8 @@ require $loader;
 
 use Symfony\Component\Console\Application;
 
-$application = new Application('Discount', '0.0.1');
+$application = new Application('Business components', '0.0.1');
 $application->setCatchExceptions(true);
 $application->add(new \BusinessComponents\Discount\Command\TestCommand());
+$application->add(new \BusinessComponents\Invoice\Command\TestCommand());
 $application->run();

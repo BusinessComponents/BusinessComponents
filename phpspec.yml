@@ -1,0 +1,3 @@
+formatter.name: pretty
+suites:
+    Invoice : { namespace: BusinessComponents, spec_path: src/Invoice }
