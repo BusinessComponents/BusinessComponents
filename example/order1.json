@@ -2,12 +2,32 @@
     "ref": "O001",
     "state": "Confirmed",
     "createdAt": "",
+    "attributes": [
+        {
+            "key": "customergroup.vip",
+            "value": "true"
+        },
+        {
+            "key": "shipcountry",
+            "value": "FRA"
+        }
+    ],
     "lines": [
         {
             "key": "i1",
             "quantity": 1,
             "title": "Product A",
-            "unitprice": "12,75"
+            "unitprice": "12,75",
+            "attributes": [
+                {
+                    "key": "category.food",
+                    "value": "true"
+                },
+                {
+                    "key": "brand.xyz",
+                    "value": "true"
+                }
+            ]
         },
         {
             "key": "i2",
