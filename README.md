@@ -1,4 +1,5 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/BusinessComponents/BusinessComponents/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/BusinessComponents/BusinessComponents/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/BusinessComponents/BusinessComponents/badges/build.png?b=master)](https://scrutinizer-ci.com/g/BusinessComponents/BusinessComponents/build-status/master)
 Business Components for PHP
 ======
 
