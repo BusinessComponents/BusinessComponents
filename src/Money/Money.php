@@ -9,6 +9,9 @@ class Money extends MathiasverraesMoney
 {
     const DEFAULT_CURRENCY_NAME = 'EUR';
 
+    /**
+     * @param integer $amount
+     */
     public function __construct($amount, Currency $currency = null)
     {
         if ($currency === null) {

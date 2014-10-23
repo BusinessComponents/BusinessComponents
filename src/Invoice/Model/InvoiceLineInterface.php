@@ -6,11 +6,15 @@ use BusinessComponents\Vat\Model\VatInterface;
 
 interface InvoiceLineInterface
 {
+    /**
+     * @return void
+     */
     public function setInvoice(InvoiceInterface $invoice);
 
     /**
      * Define the unit price of an invoice line.
      * @param int $amount The minimal unit, e.g. cent.
+     * @return InvoiceLine
      */
     public function setUnitPrice($amount);
 
@@ -29,12 +33,14 @@ interface InvoiceLineInterface
     /**
      * Define VAT object to the invoice line.
      * @param VatInterface
+     * @return InvoiceLine
      */
     public function setVat(VatInterface $vat);
 
     /**
      * Define the quantity of items.
      * @param int $quantity
+     * @return InvoiceLine
      */
     public function setQuantity($quantity);
 
