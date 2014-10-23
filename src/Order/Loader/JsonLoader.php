@@ -4,6 +4,7 @@ namespace BusinessComponents\Order\Loader;
 
 use BusinessComponents\Order\Order;
 use BusinessComponents\Order\OrderLine;
+use BusinessComponents\Attribute\Attribute;
 
 class JsonLoader
 {
@@ -22,12 +23,31 @@ class JsonLoader
         
         $order->setRef($data['ref']);
         $order->setState($data['state']);
+        
+        foreach ($data['attributes'] as $attributedata) {
+            $attribute = new Attribute();
+            $attribute->setKey($attributedata['key']);
+            $attribute->setValue($attributedata['value']);
+            $order->addAttribute($attribute);
+        }
+
         foreach ($data['lines'] as $linedata) {
             $orderline = new OrderLine();
             $orderline->setQuantity($linedata['quantity']);
             $orderline->setUnitPrice($linedata['unitprice']);
             $orderline->setTitle($linedata['title']);
+
+            foreach ($linedata['attributes'] as $attributedata) {
+                $attribute = new Attribute();
+                $attribute->setKey($attributedata['key']);
+                $attribute->setValue($attributedata['value']);
+                $orderline->addAttribute($attribute);
+            }
+            
             $order->addLine($orderline);
+
+
+
         }
         return $order;
     }

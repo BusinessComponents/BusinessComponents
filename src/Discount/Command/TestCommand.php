@@ -49,10 +49,16 @@ class TestCommand extends Command
         echo " - State: " . $order->getState() . "\n";
         echo " - Totalprice: " . $order->getTotalPrice() . "\n";
         
-        echo " - Lines:\n";
-        foreach ($order->getLines() as $line)
-        {
+        foreach ($order->getAttributes() as $attribute) {
+            echo "   @" . $attribute->getKey() . '=' . $attribute->getValue() . "\n";
+        }
+        echo "\n - Lines:\n";
+        foreach ($order->getLines() as $line) {
             echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity() . " UnitPrice: " . $line->getUnitPrice() . ". Total: " . $line->getTotalPrice() . "\n";
+            foreach ($line->getAttributes() as $attribute) {
+                echo "     @" . $attribute->getKey() . '=' . $attribute->getValue() . "\n";
+            }
+
         }
         
     }
