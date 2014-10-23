@@ -2,8 +2,12 @@
 
 namespace BusinessComponents\Order;
 
+use BusinessComponents\Attribute\AttributesTrait;
+
 class OrderLine implements OrderLineInterface
 {
+    use AttributesTrait;
+    
     private $quantity;
     
     public function setQuantity($quantity)
