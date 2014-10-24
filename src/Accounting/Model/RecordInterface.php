@@ -12,6 +12,7 @@ interface RecordInterface
     /**
      * Define the key of the journal record
      * @param string $key
+     * @return Record
      */
     public function setKey($key);
 

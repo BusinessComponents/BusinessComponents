@@ -12,7 +12,8 @@ use BusinessComponents\Traits\MutationTrait;
 
 class Invoice implements InvoiceInterface
 {
-
+    use MutationTrait;
+    
     protected $ref;
     protected $key;
     protected $lines;

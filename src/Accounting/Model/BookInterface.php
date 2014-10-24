@@ -12,6 +12,7 @@ interface BookInterface
     /**
      * Define the key of the journal book
      * @param string $key
+     * @return Book
      */
     public function setKey($key);
 

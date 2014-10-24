@@ -12,6 +12,7 @@ interface AccountInterface
     /**
      * Define the code of the account
      * @param string $code
+     * @return Account
      */
     public function setCode($code);
 

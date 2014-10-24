@@ -13,7 +13,8 @@ use BusinessComponents\Traits\MutationTrait;
 
 class InvoiceLine implements InvoiceLineInterface
 {
-
+    use MutationTrait;
+    
     protected $invoice;
     protected $key;
     protected $quantity = 1;

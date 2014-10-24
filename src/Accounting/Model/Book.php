@@ -11,7 +11,8 @@ use BusinessComponents\Traits\MutationTrait;
 
 class Book implements BookInterface
 {
-
+    use MutationTrait;
+    
     protected $key;
     protected $code;
     protected $description;

@@ -12,6 +12,7 @@ interface EntryInterface
     /**
      * Define the key of the journal entry
      * @param string $key
+     * @return Entry
      */
     public function setKey($key);
 

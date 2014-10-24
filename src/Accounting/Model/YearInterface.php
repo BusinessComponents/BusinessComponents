@@ -14,6 +14,7 @@ interface YearInterface
     /**
      * Define the start of the accounting year
      * @param DateTime
+     * @return Year
      */
     public function setStart(DateTime $start);
 
@@ -26,6 +27,7 @@ interface YearInterface
     /**
      * Define the end of the accounting year
      * @return DateTime
+     * @return Year
      */
     public function setEnd(DateTime $end);
 

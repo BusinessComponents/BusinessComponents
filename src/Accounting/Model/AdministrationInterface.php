@@ -12,6 +12,7 @@ interface AdministrationInterface
     /**
      * Define the key of the journal record
      * @param string $key
+     * @return Administration
      */
     public function setKey($key);
 
