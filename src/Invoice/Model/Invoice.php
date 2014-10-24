@@ -8,6 +8,7 @@
 namespace BusinessComponents\Invoice\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use BusinessComponents\Traits\MutationTrait;
 
 class Invoice implements InvoiceInterface
 {
@@ -19,6 +20,7 @@ class Invoice implements InvoiceInterface
     public function __construct()
     {
         $this->lines = new ArrayCollection();
+        $this->setCreatedAt();
     }
 
     public function setRef($ref)
