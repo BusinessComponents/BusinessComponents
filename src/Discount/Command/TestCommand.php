@@ -54,12 +54,11 @@ class TestCommand extends Command
         }
         echo "\n - Lines:\n";
         foreach ($order->getLines() as $line) {
-            echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity() . " UnitPrice: " . $line->getUnitPrice() . ". Total: " . $line->getTotalPrice() . "\n";
+            echo "   - '" . $line->getTitle() . "' Quantity: " . $line->getQuantity();
+            echo " UnitPrice: " . $line->getUnitPrice() . ". Total: " . $line->getTotalPrice() . "\n";
             foreach ($line->getAttributes() as $attribute) {
                 echo "     @" . $attribute->getKey() . '=' . $attribute->getValue() . "\n";
             }
-
         }
-        
     }
 }
