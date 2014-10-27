@@ -3,7 +3,6 @@
 namespace spec\BusinessComponents\Invoice\Model;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use BusinessComponents\Vat\Model\Vat;
 
 class InvoiceLineSpec extends ObjectBehavior

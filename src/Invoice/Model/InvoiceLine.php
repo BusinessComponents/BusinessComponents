@@ -9,10 +9,12 @@ namespace BusinessComponents\Invoice\Model;
 
 use BusinessComponents\Money\Money;
 use BusinessComponents\Vat\Model\VatInterface;
+use BusinessComponents\Traits\MutationTrait;
 
 class InvoiceLine implements InvoiceLineInterface
 {
-
+    use MutationTrait;
+    
     protected $invoice;
     protected $key;
     protected $quantity = 1;
@@ -21,7 +23,7 @@ class InvoiceLine implements InvoiceLineInterface
 
     public function __construct()
     {
-        
+        $this->setCreatedAt();
     }
 
     public function setInvoice(InvoiceInterface $invoice)

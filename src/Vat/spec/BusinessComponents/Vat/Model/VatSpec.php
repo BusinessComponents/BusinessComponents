@@ -3,7 +3,6 @@
 namespace spec\BusinessComponents\Vat\Model;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class VatSpec extends ObjectBehavior
 {

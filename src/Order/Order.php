@@ -3,7 +3,6 @@
 namespace BusinessComponents\Order;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use BusinessComponents\Order\OrderLineInterface;
 use BusinessComponents\Attribute\AttributesTrait;
 

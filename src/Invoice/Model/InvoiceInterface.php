@@ -14,5 +14,10 @@ namespace BusinessComponents\Invoice\Model;
  */
 interface InvoiceInterface
 {
-    
+    /**
+     * Add invoice line to the invoice.
+     * @param InvoiceLineInterface $invoiceline
+     * @return void
+     */
+    public function addLine(InvoiceLineInterface $invoiceline);
 }
