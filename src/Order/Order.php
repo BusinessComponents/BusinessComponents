@@ -5,11 +5,14 @@ namespace BusinessComponents\Order;
 use Doctrine\Common\Collections\ArrayCollection;
 use BusinessComponents\Order\OrderLineInterface;
 use BusinessComponents\Attribute\AttributesTrait;
+use BusinessComponents\Adjustment\AdjustmentsTrait;
+use BusinessComponents\Discount\DiscountSubjectInterface;
 
-class Order implements OrderInterface
+class Order implements OrderInterface, DiscountSubjectInterface
 {
 
     use AttributesTrait;
+    use AdjustmentsTrait;
     
     private $ref;
 
@@ -65,5 +68,10 @@ class Order implements OrderInterface
             $totalprice += $line->getTotalPrice();
         }
         return $totalprice;
+    }
+    
+    public function getDiscountLines()
+    {
+        return $this->getLines();
     }
 }

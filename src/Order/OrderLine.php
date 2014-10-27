@@ -3,10 +3,12 @@
 namespace BusinessComponents\Order;
 
 use BusinessComponents\Attribute\AttributesTrait;
+use BusinessComponents\Adjustment\AdjustmentsTrait;
 
 class OrderLine implements OrderLineInterface
 {
     use AttributesTrait;
+    use AdjustmentsTrait;
     
     private $quantity;
     
@@ -46,7 +48,15 @@ class OrderLine implements OrderLineInterface
     
     public function getTotalPrice()
     {
-        return $this->quantity * $this->unitprice;
+        $totalprice = $this->quantity * $this->unitprice;
+        foreach ($this->getAdjustments() as $adjustment) {
+            $param = $adjustment->getActionParameter();
+            switch ($adjustment->getAction()) {
+                case 'LINE-PERCENTAGE':
+                    $totalprice -= ($totalprice /100 * $param);
+            }
+        }
+        return $totalprice;
     }
 
 
