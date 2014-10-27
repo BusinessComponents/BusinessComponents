@@ -15,25 +15,43 @@
     "lines": [
         {
             "key": "i1",
-            "quantity": 1,
-            "title": "Product A",
-            "unitprice": "12,75",
+            "quantity": 2,
+            "title": "Cheese Sandwich",
+            "unitprice": "4.75",
             "attributes": [
                 {
                     "key": "category.food",
                     "value": "true"
                 },
                 {
-                    "key": "brand.xyz",
+                    "key": "category.sandwich",
                     "value": "true"
                 }
             ]
         },
         {
             "key": "i2",
-            "quantity": 5,
-            "title": "Product B",
-            "unitprice": "3,25"
+            "quantity": 1,
+            "title": "Hamburger",
+            "unitprice": "3.50",
+            "attributes": [
+                {
+                    "key": "category.food",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "key": "i3",
+            "quantity": 1,
+            "title": "Vanilla milkshake",
+            "unitprice": "2.95",
+            "attributes": [
+                {
+                    "key": "category.drinks",
+                    "value": "true"
+                }
+            ]
         }
     ]
 }
