@@ -7,7 +7,6 @@ trait AttributesTrait
 
     private $attributes = array();
 
-    
     public function addAttribute(Attribute $attribute)
     {
         $this->attributes[$attribute->getKey()] = $attribute;
@@ -16,6 +15,11 @@ trait AttributesTrait
     public function getAttribute($key)
     {
         return $this->attributes[$key];
+    }
+
+    public function hasAttribute($key)
+    {
+        return isset($this->attributes[$key]);
     }
     
     public function getAttributes()
