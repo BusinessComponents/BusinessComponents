@@ -1,6 +1,6 @@
 <?php
 
-namespace BusinessComponents\Order;
+namespace BusinessComponents\Order\Model;
 
 interface OrderInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BusinessComponents\Adjustment;
+namespace BusinessComponents\Adjustment\Model;
 
 class Adjustment
 {

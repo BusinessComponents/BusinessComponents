@@ -2,9 +2,9 @@
 
 namespace BusinessComponents\Order\Loader;
 
-use BusinessComponents\Order\Order;
-use BusinessComponents\Order\OrderLine;
-use BusinessComponents\Attribute\Attribute;
+use BusinessComponents\Order\Model\Order;
+use BusinessComponents\Order\Model\OrderLine;
+use BusinessComponents\Attribute\Model\Attribute;
 
 class JsonLoader
 {
