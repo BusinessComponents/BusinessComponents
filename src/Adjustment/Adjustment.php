@@ -27,4 +27,17 @@ class Adjustment
     {
         return $this->actionparameter;
     }
+    
+    private $comment;
+    
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+    
+    public function getComment()
+    {
+        return $this->comment;
+    }
+    
 }
