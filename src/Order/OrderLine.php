@@ -4,6 +4,8 @@ namespace BusinessComponents\Order;
 
 use BusinessComponents\Attribute\AttributesTrait;
 use BusinessComponents\Adjustment\AdjustmentsTrait;
+use BusinessComponents\Vat\Model\VatInterface;
+use BusinessComponents\Money\Money;
 
 class OrderLine implements OrderLineInterface
 {
@@ -59,5 +61,33 @@ class OrderLine implements OrderLineInterface
         return $totalprice;
     }
 
+    public function getUnitPriceTotal()
+    {
+        $price = new Money($this->unitPrice);
+        $price = $price->multiply($this->quantity);
+        return $price->getAmount();
+    }
 
+    private $vat;
+
+    public function setVat(VatInterface $vat)
+    {
+        $this->vat = $vat;
+        return $this;
+    }
+
+    public function getVat()
+    {
+        return $this->vat;
+    }
+
+    public function getVatPrice()
+    {
+        $unitTotal = new Money($this->getUnitPriceTotal());
+        $vatPrice  = new Money(0);
+        if ($this->vat !== null) {
+            $vatPrice = $unitTotal->multiply($this->vat->getDecimalValue());
+        }
+        return $vatPrice->getAmount();
+    }
 }

@@ -5,6 +5,7 @@ namespace BusinessComponents\Order\Loader;
 use BusinessComponents\Order\Order;
 use BusinessComponents\Order\OrderLine;
 use BusinessComponents\Attribute\Attribute;
+use BusinessComponents\Vat\Vat;
 
 class JsonLoader
 {
@@ -36,6 +37,9 @@ class JsonLoader
             $orderline->setQuantity($linedata['quantity']);
             $orderline->setUnitPrice($linedata['unitprice']);
             $orderline->setTitle($linedata['title']);
+            $vat = new Vat();
+            $vat->setValue($linedata['vatvalue']);
+            $orderline->setVat($vat);
 
             foreach ($linedata['attributes'] as $attributedata) {
                 $attribute = new Attribute();
