@@ -63,7 +63,7 @@ class OrderLine implements OrderLineInterface
 
     public function getUnitPriceTotal()
     {
-        $price = new Money($this->unitPrice);
+        $price = new Money($this->unitprice);
         $price = $price->multiply($this->quantity);
         return $price->getAmount();
     }
