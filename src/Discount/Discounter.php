@@ -62,10 +62,12 @@ class Discounter
         //echo "LINECOUNT: " . count($discountmatches) . "\n";
         
         $quantitybreak = $this->getQuantityBreak($discount, $itemcount);
+        /*
         if (!$quantitybreak) {
-            //echo "No quantity break found :(\n";
+            echo "No quantity break found :(\n";
         }
-        //print_r($quantitybreak);
+        print_r($quantitybreak);
+        */
         foreach ($discountmatches as $match) {
             $adjustment = new Adjustment();
             $adjustment->setAction($discount->getAction());
