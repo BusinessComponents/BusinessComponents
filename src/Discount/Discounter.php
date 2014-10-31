@@ -58,12 +58,12 @@ class Discounter
             $itemcount += $match->getQuantity();
         }
         
-        echo "ITEMCOUNT: " . $itemcount . "\n";
-        echo "LINECOUNT: " . count($discountmatches) . "\n";
+        //echo "ITEMCOUNT: " . $itemcount . "\n";
+        //echo "LINECOUNT: " . count($discountmatches) . "\n";
         
         $quantitybreak = $this->getQuantityBreak($discount, $itemcount);
         if (!$quantitybreak) {
-            echo "No quantity break found :(\n";
+            //echo "No quantity break found :(\n";
         }
         //print_r($quantitybreak);
         foreach ($discountmatches as $match) {
@@ -103,7 +103,7 @@ class Discounter
         $attribute = $scope->getAttribute($rule->getVariable());
         $value = $attribute->getValue();
         $rulevalue = $rule->getValue();
-        echo "VALUE: [$value][$rulevalue]\n";
+        //echo "VALUE: [$value][$rulevalue]\n";
         if ($rule->getComparison()=='equals') {
             if ($value == $rulevalue) {
                 return true;
