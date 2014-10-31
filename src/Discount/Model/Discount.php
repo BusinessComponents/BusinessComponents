@@ -5,6 +5,7 @@ namespace BusinessComponents\Discount\Model;
 use BusinessComponents\Traits\NameTrait;
 use BusinessComponents\Traits\DescriptionTrait;
 use Doctrine\Common\Collections\ArrayCollection;
+use DateTime;
 
 class Discount
 {
@@ -22,7 +23,7 @@ class Discount
         $this->quantitybreaks = new ArrayCollection();
     }
 
-    public function setStartAt(Date $date)
+    public function setStartAt(DateTime $date)
     {
         $this->startAt = $date;
     }
@@ -32,7 +33,7 @@ class Discount
         return $this->startAt;
     }
 
-    public function setEndAt(Date $date)
+    public function setEndAt(DateTime $date)
     {
         $this->endAt = $date;
     }
