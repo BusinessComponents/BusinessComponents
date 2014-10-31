@@ -6,7 +6,7 @@ use BusinessComponents\Attribute\Model\AttributesTrait;
 use BusinessComponents\Adjustment\Model\AdjustmentsTrait;
 use BusinessComponents\Vat\Model\VatInterface;
 use BusinessComponents\Money\Money;
-use BusinessComponents\Traits\Model\KeyTrait;
+use BusinessComponents\Traits\KeyTrait;
 
 class OrderLine implements OrderLineInterface
 {
