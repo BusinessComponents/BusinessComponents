@@ -23,6 +23,6 @@ class PercentageAction
     {
         $totalprice = $line->getTotalPrice();
         $adjustmentprice = ($totalprice /100 * $this->parameter);
-        $line->addAdjustmentPrice(-$adjustmentprice)
+        $line->addAdjustmentPrice(-$adjustmentprice);
     }
 }
