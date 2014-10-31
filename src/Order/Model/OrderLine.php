@@ -6,11 +6,13 @@ use BusinessComponents\Attribute\Model\AttributesTrait;
 use BusinessComponents\Adjustment\Model\AdjustmentsTrait;
 use BusinessComponents\Vat\Model\VatInterface;
 use BusinessComponents\Money\Money;
+use BusinessComponents\Traits\Model\KeyTrait;
 
 class OrderLine implements OrderLineInterface
 {
     use AttributesTrait;
     use AdjustmentsTrait;
+    use KeyTrait;
     
     private $quantity;
     

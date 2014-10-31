@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use BusinessComponents\Order\Model\OrderLineInterface;
 use BusinessComponents\Attribute\Model\AttributesTrait;
 use BusinessComponents\Adjustment\Model\AdjustmentsTrait;
+use BusinessComponents\Traits\Model\KeyTrait;
 use BusinessComponents\Discount\Model\DiscountSubjectInterface;
 
 class Order implements OrderInterface, DiscountSubjectInterface
@@ -13,6 +14,7 @@ class Order implements OrderInterface, DiscountSubjectInterface
 
     use AttributesTrait;
     use AdjustmentsTrait;
+    use KeyTrait;
     
     private $ref;
 
