@@ -1,6 +1,6 @@
 <?php
 
-namespace BusinessComponents\Discount;
+namespace BusinessComponents\Discount\Model;
 
 class Rule
 {

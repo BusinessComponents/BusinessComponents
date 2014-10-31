@@ -1,6 +1,6 @@
 <?php
 
-namespace BusinessComponents\Adjustment;
+namespace BusinessComponents\Adjustment\Model;
 
 class Adjustment
 {
@@ -27,4 +27,17 @@ class Adjustment
     {
         return $this->actionparameter;
     }
+    
+    private $comment;
+    
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+    
+    public function getComment()
+    {
+        return $this->comment;
+    }
+    
 }

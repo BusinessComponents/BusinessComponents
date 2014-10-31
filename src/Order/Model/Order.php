@@ -1,12 +1,12 @@
 <?php
 
-namespace BusinessComponents\Order;
+namespace BusinessComponents\Order\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use BusinessComponents\Order\OrderLineInterface;
-use BusinessComponents\Attribute\AttributesTrait;
-use BusinessComponents\Adjustment\AdjustmentsTrait;
-use BusinessComponents\Discount\DiscountSubjectInterface;
+use BusinessComponents\Order\Model\OrderLineInterface;
+use BusinessComponents\Attribute\Model\AttributesTrait;
+use BusinessComponents\Adjustment\Model\AdjustmentsTrait;
+use BusinessComponents\Discount\Model\DiscountSubjectInterface;
 
 class Order implements OrderInterface, DiscountSubjectInterface
 {

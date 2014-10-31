@@ -5,7 +5,7 @@
  *
  */
 
-namespace BusinessComponents\Discount;
+namespace BusinessComponents\Discount\Model;
 
 /**
  * DiscountSubjectInterface.

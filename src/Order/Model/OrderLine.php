@@ -1,9 +1,9 @@
 <?php
 
-namespace BusinessComponents\Order;
+namespace BusinessComponents\Order\Model;
 
-use BusinessComponents\Attribute\AttributesTrait;
-use BusinessComponents\Adjustment\AdjustmentsTrait;
+use BusinessComponents\Attribute\Model\AttributesTrait;
+use BusinessComponents\Adjustment\Model\AdjustmentsTrait;
 use BusinessComponents\Vat\Model\VatInterface;
 use BusinessComponents\Money\Money;
 
@@ -56,6 +56,10 @@ class OrderLine implements OrderLineInterface
             switch ($adjustment->getAction()) {
                 case 'LINE-PERCENTAGE':
                     $totalprice -= ($totalprice /100 * $param);
+                    break;
+                case 'LINE-FIXED':
+                    $totalprice -= $param;
+                    break;
             }
         }
         return $totalprice;

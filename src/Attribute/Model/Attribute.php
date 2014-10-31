@@ -1,6 +1,6 @@
 <?php
 
-namespace BusinessComponents\Attribute;
+namespace BusinessComponents\Attribute\Model;
 
 class Attribute
 {

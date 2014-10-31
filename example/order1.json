@@ -16,7 +16,7 @@
         {
             "key": "i1",
             "quantity": 2,
-            "title": "Cheese Sandwich",
+            "title": "Cucumber Sandwich",
             "unitprice": "4.75",
             "attributes": [
                 {
@@ -26,6 +26,10 @@
                 {
                     "key": "category.sandwich",
                     "value": "true"
+                },
+                {
+                    "key": "color",
+                    "value": "green"
                 }
             ]
         },
@@ -44,12 +48,16 @@
         {
             "key": "i3",
             "quantity": 1,
-            "title": "Vanilla milkshake",
+            "title": "Kiwi milkshake",
             "unitprice": "2.95",
             "attributes": [
                 {
                     "key": "category.drinks",
                     "value": "true"
+                },
+                {
+                    "key": "color",
+                    "value": "green"
                 }
             ]
         }
