@@ -5,10 +5,12 @@ namespace BusinessComponents\Discount\Model;
 use BusinessComponents\Traits\NameTrait;
 use BusinessComponents\Traits\DescriptionTrait;
 use Doctrine\Common\Collections\ArrayCollection;
+use BusinessComponents\Traits\KeyTrait;
 use DateTime;
 
 class Discount
 {
+    use KeyTrait;
     use NameTrait;
     use DescriptionTrait;
     
