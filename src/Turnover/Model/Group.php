@@ -3,6 +3,7 @@
 namespace BusinessComponents\Turnover\Model;
 
 use BusinessComponents\Traits\MutationTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class Group implements GroupInterface
 {
@@ -10,10 +11,12 @@ class Group implements GroupInterface
 
     protected $segmentBy;
     protected $name;
+    protected $accounts;
 
     public function __construct()
     {
         $this->setCreatedAt();
+        $this->accounts = new ArrayCollection();
     }
 
     public function setSegmentBy($segmentBy)
@@ -36,5 +39,15 @@ class Group implements GroupInterface
     public function getName()
     {
         return $this->name;
+    }
+
+    public function addAccount(Account $account)
+    {
+        $this->accounts->add($account);
+    }
+
+    public function getAccounts()
+    {
+        return $this->accounts->toArray();
     }
 }
