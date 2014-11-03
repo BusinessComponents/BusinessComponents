@@ -10,6 +10,7 @@ class Account implements AccountInterface
 
     protected $value;
     protected $accountCode;
+    protected $key;
 
     public function setValue($value)
     {
@@ -31,5 +32,16 @@ class Account implements AccountInterface
     public function getAccountCode()
     {
         return $this->accountCode;
+    }
+
+    public function setKey($key)
+    {
+        $this->key = $key;
+        return $this;
+    }
+
+    public function getKey()
+    {
+        return $this->key;
     }
 }
