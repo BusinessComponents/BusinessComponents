@@ -49,10 +49,10 @@ class Resolver
         $accounts = $this->group->getAccounts();
         foreach ($accounts as $account) {
             if ($account->getValue() == $value) {
-                return $account->getAccountCode();
+                return $account;
                 break;
             } elseif ($account->getValue() == '*') {
-                $fallbackAccount = $account->getAccountCode();
+                $fallbackAccount = $account;
             }
         }
         if ($fallbackAccount) {

@@ -19,15 +19,18 @@ class ResolverSpec extends ObjectBehavior
         $account1 =  new Account();
         $account1->setValue('NLD');
         $account1->setAccountCode(8000);
+
         $account2 =  new Account();
         $account2->setValue('EU');
         $account2->setAccountCode(8001);
+        
         $group = new Group();
         $group->addAccount($account1);
         $group->addAccount($account2);
         $group->setSegmentBy('VATREGION');
+
         $this->setGroup($group);
         $this->setVatRegion('EU');
-        $this->getAccount()->shouldReturn(8001);
+        $this->getAccount()->shouldReturn($account2);
     }
 }
