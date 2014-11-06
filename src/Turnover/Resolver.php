@@ -80,6 +80,9 @@ class Resolver
             case 'DOTW':
                 $value = $this->dayOfWeek;
                 break;
+            case 'NONE':
+                $value = '';
+                break;
             default:
                 throw new \InvalidArgumentException('Segment is not configured.');
                 break;
