@@ -125,6 +125,10 @@ class Discounter
     {
         foreach ($discount->getRules() as $rule) {
             $attribute = $product->getAttribute($rule->getVariable());
+            if (!$attribute) {
+                return false;
+            }
+
             $value = $attribute->getValue();
             $rulevalue = $rule->getValue();
             //echo "VALUE: [$value][$rulevalue]\n";
