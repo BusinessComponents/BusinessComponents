@@ -12,14 +12,14 @@ use BusinessComponents\Discount\Model\QuantityBreak;
 use BusinessComponents\Discount\Model\Rule;
 use BusinessComponents\Discount\Discounter;
 
-class TestCommand extends Command
+class OrderTestCommand extends Command
 {
     protected function configure()
     {
         $this->ignoreValidationErrors();
 
         $this
-            ->setName('discount:test')
+            ->setName('discount:ordertest')
             ->setDescription('Test command')
             ->addArgument(
                 'orderfilename',
