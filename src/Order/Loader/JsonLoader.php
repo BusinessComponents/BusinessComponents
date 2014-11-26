@@ -5,7 +5,7 @@ namespace BusinessComponents\Order\Loader;
 use BusinessComponents\Order\Model\Order;
 use BusinessComponents\Order\Model\OrderLine;
 use BusinessComponents\Attribute\Model\Attribute;
-use BusinessComponents\Vat\Vat;
+use BusinessComponents\Vat\Model\Vat;
 
 class JsonLoader
 {
