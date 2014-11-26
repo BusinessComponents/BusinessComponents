@@ -63,7 +63,7 @@ class Vat implements VatInterface
     {
         $value = (int)$value;
         if ($value < 0) {
-            throw new \OutOfRangeException('VAT value must be greater than 0.');
+            throw new \OutOfRangeException('VAT value must be 0 or greater');
         }
         $this->value = $value;
         return $this;
