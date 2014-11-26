@@ -1,0 +1,16 @@
+{
+    "code": "S-KIWI",
+    "name": "Smoothie Kiwi",
+    "state": "Active",
+    "createdAt": "",
+    "attributes": [
+        {
+            "key": "color",
+            "value": "green"
+        },
+        {
+            "key": "category",
+            "value": "smoothies"
+        }
+    ]
+}
