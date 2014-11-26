@@ -5,6 +5,7 @@ namespace BusinessComponents\Discount;
 use BusinessComponents\Adjustment\Model\Adjustment;
 use BusinessComponents\Discount\Model\DiscountSubjectInterface;
 use BusinessComponents\Discount\Model\Discount;
+use BusinessComponents\Product\Model\ProductInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Discounter
@@ -116,5 +117,38 @@ class Discounter
             }
         }
         return false;
+    }
+    
+    
+    
+    public function matchProduct(ProductInterface $product, Discount $discount)
+    {
+        foreach ($discount->getRules() as $rule) {
+            $attribute = $product->getAttribute($rule->getVariable());
+            $value = $attribute->getValue();
+            $rulevalue = $rule->getValue();
+            //echo "VALUE: [$value][$rulevalue]\n";
+            if ($rule->getComparison()!='equals') {
+                if ($value == $rulevalue) {
+                    return false;
+                }
+            } else {
+                if ($value != $rulevalue) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public function getMatchedDiscountsForProduct(ProductInterface $product, array $discounts)
+    {
+        $matches = array();
+        foreach ($discounts as $discount) {
+            if ($this->matchProduct($product, $discount)) {
+                $matches[] = $discount;
+            }
+        }
+        return $matches;
     }
 }

@@ -62,7 +62,7 @@ class ProductTestCommand extends Command
         // -----------------------------
         
         $discount = new Discount();
-        $discount->setName('2.50 off on green products');
+        $discount->setName('2.50 off on green smoothies');
         $discount->setAction('LINE-FIXED');
         
         $rule = new Rule();
@@ -71,18 +71,30 @@ class ProductTestCommand extends Command
         $rule->setComparison('equals');
         $rule->setValue('green');
         $discount->addRule($rule);
-        
+
+        $rule = new Rule();
+        $rule->setScope('line');
+        $rule->setVariable('category');
+        $rule->setComparison('equals');
+        $rule->setValue('smoothies');
+        $discount->addRule($rule);
+
         $quantitybreak = new QuantityBreak();
         $quantitybreak->setQuantity(1);
         $quantitybreak->setActionParameter(2.50);
         $discount->addQuantityBreak($quantitybreak);
 
+        $discounts = array($discount);
+        
         $discounter = new Discounter();
-        //$discounter->matchProduct($product, $discount);
-        
-        
-        // -----------------------------
-        
         $this->dumpProduct($product);
+
+        $matches = $discounter->getMatchedDiscountsForProduct($product, $discounts);
+        $output->writeLn("Matched discounts: " . count($matches));
+        foreach ($matches as $matcheddiscount) {
+            $output->writeLn(" * " . $discount->getName());
+        }
+
+
     }
 }
