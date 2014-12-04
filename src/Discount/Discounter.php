@@ -106,7 +106,7 @@ class Discounter
             $value = $attribute->getValue();
         }
         $rulevalue = $rule->getValue();
-        echo "VALUE: [$value][$rulevalue]\n";
+        //echo "VALUE: [$value][$rulevalue]\n";
         if ($rule->getComparison()=='equals') {
             if ($value == $rulevalue) {
                 return true;
