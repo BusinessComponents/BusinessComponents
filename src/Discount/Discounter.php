@@ -124,13 +124,14 @@ class Discounter
     public function matchProduct(ProductInterface $product, Discount $discount)
     {
         foreach ($discount->getRules() as $rule) {
-            $attribute = $product->getAttribute($rule->getVariable());
-            if (!$attribute) {
-                return false;
+            if (!$product->hasAttribute($rule->getVariable())) {
+                $value = null;
+            } else {
+                $attribute = $product->getAttribute($rule->getVariable());
+                $value = $attribute->getValue();
             }
-
-            $value = $attribute->getValue();
             $rulevalue = $rule->getValue();
+            
             //echo "VALUE: [$value][$rulevalue]\n";
             if ($rule->getComparison()!='equals') {
                 if ($value == $rulevalue) {
