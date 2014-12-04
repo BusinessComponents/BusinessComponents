@@ -86,11 +86,20 @@ class OrderTestCommand extends Command
         $discount->addRule($rule);
         
         $rule = new Rule();
+        $rule->setScope('line');
+        $rule->setVariable('undefined');
+        $rule->setComparison('not-equals');
+        $rule->setValue('true');
+        $discount->addRule($rule);
+
+
+        $rule = new Rule();
         $rule->setScope('subject');
         $rule->setVariable('shipcountry');
         $rule->setComparison('equals');
         $rule->setValue('FRA');
         $discount->addRule($rule);
+
 
         $quantitybreak = new QuantityBreak();
         $quantitybreak->setQuantity(1);

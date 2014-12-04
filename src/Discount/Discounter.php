@@ -100,13 +100,13 @@ class Discounter
     private function matchRuleToScope($rule, $scope)
     {
         if (!$scope->hasAttribute($rule->getVariable())) {
-            return false;
+            $value = null;
+        } else {
+            $attribute = $scope->getAttribute($rule->getVariable());
+            $value = $attribute->getValue();
         }
-        
-        $attribute = $scope->getAttribute($rule->getVariable());
-        $value = $attribute->getValue();
         $rulevalue = $rule->getValue();
-        //echo "VALUE: [$value][$rulevalue]\n";
+        echo "VALUE: [$value][$rulevalue]\n";
         if ($rule->getComparison()=='equals') {
             if ($value == $rulevalue) {
                 return true;
