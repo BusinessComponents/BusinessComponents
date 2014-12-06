@@ -69,12 +69,15 @@ class Discounter
         }
         print_r($quantitybreak);
         */
-        foreach ($discountmatches as $match) {
-            $adjustment = new Adjustment();
-            $adjustment->setAction($discount->getAction());
-            $adjustment->setActionParameter($quantitybreak->getActionParameter());
-            $adjustment->setComment($discount->getName());
-            $match->addAdjustment($adjustment);
+        
+        if ($quantitybreak) {
+            foreach ($discountmatches as $match) {
+                $adjustment = new Adjustment();
+                $adjustment->setAction($discount->getAction());
+                $adjustment->setActionParameter($quantitybreak->getActionParameter());
+                $adjustment->setComment($discount->getName());
+                $match->addAdjustment($adjustment);
+            }
         }
         
         //print_r($discountmatches);
