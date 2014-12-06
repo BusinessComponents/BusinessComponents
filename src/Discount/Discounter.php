@@ -73,7 +73,7 @@ class Discounter
             $adjustment = new Adjustment();
             $adjustment->setAction($discount->getAction());
             $adjustment->setActionParameter($quantitybreak->getActionParameter());
-            $adjustment->setComment("Discount: " . $discount->getName());
+            $adjustment->setComment($discount->getName());
             $match->addAdjustment($adjustment);
         }
         
